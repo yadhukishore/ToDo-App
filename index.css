@@ -1,0 +1,100 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #dedede;
+    background-image: url('https://camo.githubusercontent.com/cba518ead87b032dc6f1cbfc7fade27604449201ac1baf34d889f77f093f01ac/68747470733a2f2f7765622e77686174736170702e636f6d2f696d672f62672d636861742d74696c652d6461726b5f61346265353132653731393562366237333364393131306234303866303735642e706e67');
+    background-size: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   }
+   
+   /* Todo App Container */
+   .todo-app {
+    max-width: 600px;
+    padding: 50px;
+    background-color: #fff;
+
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 1px 15px rgb(60, 60, 76);
+   }
+   
+   /* Form Styles */
+   .todo-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+   }
+   
+   .todo-form input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+   }
+   
+   .todo-form button {
+    padding: 10px 20px;
+    background-image: linear-gradient(to right, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+   }
+   
+   .todo-form button:hover {
+    background-image: linear-gradient(to right, #0056b3, #007bff);
+   }
+   
+  /* Todo List Styles */
+.todo-list {
+    list-style: none;
+    padding: 0;
+   }
+   
+   .todo-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+   
+   .todo-list li:last-child {
+    border-bottom: none;
+   }
+
+   .todo-list li span {
+    display: flex; /* Use flex to align icons horizontally */
+    gap: 10px; /* Adds space between icons */
+}
+   
+  
+   
+   
+   /* Hover Effect */
+   .todo-list li:hover {
+    background-color: #e9ecef;
+    cursor: pointer;
+   }
+   
+   /* Completed Todo Styles */
+   .todo-list li.completed {
+    text-decoration: line-through;
+    color: #6c757d;
+   }
+
+   .completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+    color: rgb(49, 70, 18);
+   }
+   
