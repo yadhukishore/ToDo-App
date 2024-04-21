@@ -16,26 +16,23 @@ const Body = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    addTodo();
   };
-
+  
   const addTodo = () => {
-    if (inputValue !== "") {
+    if (inputValue.trim() !== "") {
       const newTodo = {
         id: Date.now(),
-        text: inputValue,
+        text: inputValue.trim(),
         status: false,
       };
       setTodos([...todos, newTodo]);
       setInputValue("");
       if(editId){
-        const editTodo= todos.find((val)=>val.id===editId);
-        console.log("Again",editTodo);
-        const updateEdit = todos.map((val)=>val.id===editTodo.id
-        ?(val={id: val.id , text:inputValue})
-        :(val={id:val.id , text:val.text}))
-        setTodos(updateEdit);
+        const updatedTodos = todos.map((val) => val.id === editId ? { ...val, text: inputValue } : val);
+        setTodos(updatedTodos);
         setEditID(0);
-      }
+       }
     }
   };
 
@@ -60,9 +57,16 @@ const Body = () => {
   };
   const onEdit = (id) => {
     const editTodo = todos.find((val) => val.id === id);
-    setInputValue(editTodo.text);
-    console.log("EditTodo:",editTodo)
-    setEditID(editTodo.id);
+    if(editTodo){
+      setInputValue(editTodo.text);
+      console.log("EditTodo:",editTodo)
+      setEditID(editTodo.id);
+    }
+    else{
+      setInputValue("");
+      setEditID(0);
+    }
+ 
   };
 
   return (

@@ -73,8 +73,8 @@ body {
    }
 
    .todo-list li span {
-    display: flex; /* Use flex to align icons horizontally */
-    gap: 10px; /* Adds space between icons */
+    display: flex; 
+    gap: 10px; 
 }
    
   
